@@ -1,0 +1,13 @@
+# Vivado generated files
+*.jou
+*.log
+*.str
+*.xpr
+vivado_build/
+
+# Simulation artifacts
+*.out
+*.vcd
+
+# OS files
+.DS_Store
