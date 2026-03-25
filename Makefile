@@ -2,9 +2,14 @@ SRCS = src/clk_div.v src/vga_timing.v src/btn_debounce.v src/game_controller.v s
 IVERILOG = iverilog
 VVP = vvp
 
-.PHONY: all sim_game sim_renderer clean
+.PHONY: all sim_game sim_renderer sim_debounce clean
 
-all: sim_game sim_renderer
+all: sim_debounce sim_game sim_renderer
+
+sim_debounce:
+	@echo "=== Running Button Debounce Testbench ==="
+	$(IVERILOG) -o sim_debounce.out src/btn_debounce.v sim/tb_btn_debounce.v
+	$(VVP) sim_debounce.out
 
 sim_game:
 	@echo "=== Running Game Controller Testbench ==="

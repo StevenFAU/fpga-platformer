@@ -7,7 +7,7 @@ A hardware platformer game running on the Nexys4 DDR (Artix-7 XC7A100T), display
 | Phase | Description | Status |
 |-------|-------------|--------|
 | 1 | Project scaffold + VGA timing | ✅ |
-| 2 | Button debouncing | ⬜ |
+| 2 | Button debouncing | ✅ |
 | 3 | Static scene renderer | ⬜ |
 | 4 | Game controller (physics) | ⬜ |
 | 5 | Top-level integration | ⬜ |
@@ -49,6 +49,7 @@ A hardware platformer game running on the Nexys4 DDR (Artix-7 XC7A100T), display
 
 - **`clk_div.v`** — Divides 100 MHz board clock to 25 MHz pixel clock (2-bit counter)
 - **`vga_timing.v`** — Generates 640×480 @ 60 Hz VGA sync signals, pixel coordinates, and video enable
+- **`btn_debounce.v`** — Two-stage synchronizer + 20ms stability counter for noisy button inputs
 
 ## Game Design
 
