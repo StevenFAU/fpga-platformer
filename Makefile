@@ -13,12 +13,12 @@ sim_debounce:
 
 sim_game:
 	@echo "=== Running Game Controller Testbench ==="
-	$(IVERILOG) -o sim_game.out $(SRCS) sim/tb_game_controller.v
+	$(IVERILOG) -o sim_game.out src/game_controller.v sim/tb_game_controller.v
 	$(VVP) sim_game.out
 
 sim_renderer:
 	@echo "=== Running Renderer Testbench ==="
-	$(IVERILOG) -o sim_renderer.out $(SRCS) sim/tb_renderer.v
+	$(IVERILOG) -o sim_renderer.out src/renderer.v sim/tb_renderer.v
 	$(VVP) sim_renderer.out
 
 clean:
