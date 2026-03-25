@@ -10,7 +10,7 @@ A hardware platformer game running on the Nexys4 DDR (Artix-7 XC7A100T), display
 | 2 | Button debouncing | ✅ |
 | 3 | Static scene renderer | ✅ |
 | 4 | Game controller (physics) | ✅ |
-| 5 | Top-level integration | ⬜ |
+| 5 | Top-level integration | ✅ |
 
 ## Architecture
 
@@ -52,6 +52,7 @@ A hardware platformer game running on the Nexys4 DDR (Artix-7 XC7A100T), display
 - **`btn_debounce.v`** — Two-stage synchronizer + 20ms stability counter for noisy button inputs
 - **`renderer.v`** — Combinational pixel color generator with draw priority: player (red) > platforms (brown) > ground (green) > background (dark blue)
 - **`game_controller.v`** — Per-frame game logic: horizontal movement, jump/gravity physics (4 fractional bits), AABB platform collision detection
+- **`top_platformer.v`** — Top-level integration: clk_div, vga_timing, 3× btn_debounce, game_controller, renderer
 
 ## Game Design
 
